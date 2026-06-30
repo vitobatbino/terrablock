@@ -30,20 +30,21 @@
 
 The goal of this project is to build a hyper-optimized, standalone engine from scratch without relying on massive frameworks like Unity or Unreal. By writing memory-efficient C++ and leveraging multithreading, TerraBlock is designed to run incredibly fast on modern machines while maintaining strict compatibility with retro hardware.
 
-### 🚀 Current State of the Game (v0.0.0.1 - Prototype)
+### 🚀 Engine Capabilities
 
-Currently, the game is in its foundational prototype phase. The core engine architecture is complete:
-*   **Infinite-Style Generation:** Asynchronous, multithreaded chunk generation that doesn't freeze the main thread.
-*   **Classic Terrain:** A 256x64x256 world featuring 7 layers of varied dirt, deep stone, and caves.
-*   **Voxel Physics:** Custom AABB grid collision allowing for smooth wall-sliding and snappy, frictionless movement.
-*   **Pure Retro Graphics:** Powered by legacy OpenGL 1.1 with Flat-Shaded lighting and dynamic texture atlases.
+The TerraBlock engine is built on a highly modular and optimized architecture:
+*   **Voxel Interaction:** Fast 3D raycasting allowing for real-time block breaking, placing, and targeting highlights.
+*   **Infinite-Style Meshing:** Asynchronous, double-buffered chunk generation running on background threads ensures zero flickering and no main-thread lag spikes.
+*   **Engine Persistence:** Native C++ binary level saving and loading utilizing DEFLATE compression for minimal file footprints on disk.
+*   **Voxel Physics:** Custom AABB grid collision allowing for smooth wall-sliding and snappy, frictionless classic movement.
+*   **Pure Retro Graphics:** Powered by legacy OpenGL 1.1 with Flat-Shaded lighting, cross-chunk face culling, and dynamic 1D texture atlases.
 
 ---
 
 ## 🛠️ Built With
 
 This engine was built from the ground up utilizing the following technologies:
-*   **[C++11/17]** - Core engine logic, memory management, and multithreading.
+*   **[C++11/17]** - Core engine logic, memory management, file systems, and multithreading.
 *   **[CMake]** - Cross-platform build system for Linux and Windows.
 *   **[Raylib]** - Window management, inputs, and hardware abstraction.
 *   **[FastNoiseLite]** - Lightweight 2D/3D fractal noise generation.
@@ -61,6 +62,10 @@ Head over to the [Releases](../../releases) tab and download the version for you
 *   `W A S D` or `Left Stick` - Move
 *   `Mouse` or `Right Stick` - Look
 *   `Spacebar` or `A Button` - Jump (Hold to bunny-hop)
+*   `Left Click` or `Right Trigger` - Break Block
+*   `Right Click` or `Left Trigger` - Place Block
+*   `ENTER` - Save World
+*   `BACKSPACE` - Load World
 *   `R` - Hold to respawn dynamically
 *   `ESC` - Quit Game
 
@@ -69,8 +74,8 @@ Head over to the [Releases](../../releases) tab and download the version for you
 ## 🗺️ Roadmap
 
 - [x] TerraBlock Prototype v0.0.0.1 (Cave game tech test)
-- [ ] **Next Up:** TerraBlock Prototype v0.0.0.2 (rd-132211)
-- [ ] TerraBlock Prototype v0.0.0.3 (rd-132328)
+- [x] TerraBlock Prototype v0.0.0.2 (rd-132211)
+- [ ] **Next Up:** TerraBlock Prototype v0.0.0.3 (rd-132328)
 - [ ] TerraBlock Prototype v0.0.0.4 (rd-20090515)
 - [ ] TerraBlock Prototype v0.0.0.5 (rd-160052)
 - [ ] TerraBlock Prototype v0.0.0.6 (rd-161348)
